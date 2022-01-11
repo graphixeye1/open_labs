@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial scale=1">
+	<title>Temperature Change</title>
+</head>
+<style>
+	div{
+		box-sizing: border-box;
+		width: 50%;
+		color: magenta;
+		border-style: solid;
+		margin-left: 200px;
+		background-color: cyan;
+	}
+	input{
+		margin-left: 10px;
+	}
+	h2{
+		color: blue;
+		text-align: center;
+	}
+	p{
+		text-align: center;
+	}
+</style>
+<script>
+	function convert(degree){
+		var x;
+		if (degree =="C"){
+			x = document.getElementById('cel_degree').value * 1.8 + 32;
+			document.getElementById('fah_degree').value=Math.round(x);
+		}
+		else{
+			x = (document.getElementById('fah_degree').value -32) /1.8;
+		document.getElementById('cel_degree').value=Math.round(x);
+		}
+	}
+</script>
+<body>
+	<div>
+		<h2>Temperature Conversion</h2>
+		<p>Degree Celsius:<input type="number" id="cel_degree" onkeyup="convert('C')" name="Cels"></p>
+		<p style="margin-left: 30px">Fahrenheit:<input type="number" id="fah_degree" onkeyup="convert('F')" name="Fah"></p>
+	</div>
+
+
+
+</body>
+</html>
